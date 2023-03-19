@@ -1,5 +1,5 @@
 """
-In this assignment I wrote a code that implemented the Caesar Cipher encryption technique.
+For this assignment I wrote a code that implemented the Caesar Cipher encryption technique.
 """
 
 from art import logo_Caesar_Cipher
@@ -8,7 +8,7 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 def caesar(plain_text, shift_amount, cipher_direction):
     """
-   This function will combine both of the encrypt and the decrypt functions of the Caesar Cipher encryption technique.
+   This function will combine both of the encryption and the decryption of the Caesar Cipher encryption technique.
     """
     cipher_msg = ""
     if  cipher_direction == "decode":
@@ -26,7 +26,10 @@ def caesar(plain_text, shift_amount, cipher_direction):
     
 
 while keep_going == 'yes':
+    
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    while direction != "decode" or direction != "encode":
+        direction = input("Wrong input! Please try again:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
     caesar(text, shift, direction)
